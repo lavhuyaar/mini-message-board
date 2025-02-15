@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: monospace;
+  padding: 10px 20px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.message-box {
+  background-color: brown;
+  padding: 10px 5px;
+  color: white;
+}
+
+li {
+  list-style-type: none;
+  padding: 4px;
+}
+
+.message-text, .message-user {
+  font-size: 2rem;
+}
+
+.message-form {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  gap: 10px;
+  background: crimson;
+  font-size: 1.3rem;
+}
+
+input {
+  height: 35px;
+  padding: 5px;
+}
+
+.message-form > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.message-form > button {
+  align-self: flex-end;
+}
+
+.go-to-new-btn,
+.go-back-btn,
+.message-form > button {
+  padding: 10px 20px;
+  background-color: rgb(255, 255, 20);
+  border: 2px solid brown;
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
+  font-weight: 600;
+  font-size: 1.1rem;
+  max-width: 200px;
+  text-align: center;
+}
+
+.details-btn {
+  color: white;
+  font-size: 1rem;
+  background-color: gray;
+  padding: 4px 5px;
+  text-decoration: none;
+}
+
+h1 {
+  padding: 5px 5px 0px 5px;
+  font-size: 2rem;
+}
+
+.go-to-new-btn:hover,
+.go-back-btn:hover,
+.message-form > button:hover {
+  background-color: rgb(218, 218, 12);
+  transition: 300ms;
+}

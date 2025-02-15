@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Messages</h1>
+      <div>
+        <% messages.map((message) => { %>
+        <ul class="message-box">
+          <li class="message-user"><%= message.user %></li>
+          <li>On <%= message.added %></li>
+          <a href="/message/<%= message.user %>" class="details-btn">Details</a>
+        </ul>
+        <% }) %>
+      </div>
+
+      <a href="/new" class="go-to-new-btn">Add new message</a>
+    </div>
+  </body>
+</html>
