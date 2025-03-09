@@ -17,6 +17,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/", indexRoute);
 app.use("/new", newRoute);
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server running on Port ${PORT}!`);
 });
