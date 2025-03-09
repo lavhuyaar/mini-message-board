@@ -1,3 +1,4 @@
+require("dotenv").config();
 const path = require("node:path");
 const express = require("express");
 const indexRoute = require("./routes/index/indexRoute");
@@ -15,7 +16,6 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/", indexRoute);
 app.use("/new", newRoute);
-
 
 app.listen(PORT, () => {
   console.log(`Server running on Port ${PORT}!`);

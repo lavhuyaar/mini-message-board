@@ -1,33 +1,25 @@
-const messages = [
-  {
-    text: "Hi there!",
-    user: "Amando",
-    added: new Date(),
-  },
-  {
-    text: "Hello World!",
-    user: "Charles",
-    added: new Date(),
-  },
-];
+const db = require("../../db/queries");
 
-const getMessages = (req, res) => {
+const getMessages = async (req, res) => {
+  const messages = await db.getMessages();
   res.render("index", { title: "Mini Messageboard", messages: messages });
 };
 
-const postMessage = (req, res) => {
-  messages.push({
-    user: req.body.name,
-    text: req.body.message,
-    added: new Date(),
-  });
+const postMessage = async (req, res) => {
+ await db.postMessage(
+    req.body.name,
+    req.body.message,
+  );
   res.redirect("/");
 };
 
-const getUserMessage = (req, res) => {
+const getUserMessage = async (req, res) => {
   const user = req.params.user;
-  const userData = messages.find((data) => data.user === user);
-  res.render("userMessage", {title: `${userData.user}'s message`,  data: userData });
+  const userData = await db.getUserMessage(user);
+  res.render("userMessage", {
+    title: `${userData[0].username}'s message`,
+    data: userData[0],
+  });
 };
 
 module.exports = { getMessages, postMessage, getUserMessage };

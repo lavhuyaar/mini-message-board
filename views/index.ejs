@@ -9,9 +9,9 @@
       <div>
         <% messages.map((message) => { %>
         <ul class="message-box">
-          <li class="message-user"><%= message.user %></li>
+          <li class="message-user"><%= message.username %></li>
           <li>On <%= message.added %></li>
-          <a href="/message/<%= message.user %>" class="details-btn">Details</a>
+          <a href="/message/<%= message.username %>" class="details-btn">Details</a>
         </ul>
         <% }) %>
       </div>
