@@ -9,6 +9,7 @@ const postMessage = async (req, res) => {
  await db.postMessage(
     req.body.name,
     req.body.message,
+    new Date(),
   );
   res.redirect("/");
 };

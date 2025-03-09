@@ -13,10 +13,10 @@ const getUserMessage = async (username) => {
   return rows;
 };
 
-const postMessage = async (username, text) => {
+const postMessage = async (username, text, added) => {
   await pool.query(
-    'INSERT INTO messages (username, text) VALUES ($1, $2)',
-    [username, text]
+    'INSERT INTO messages (username, text, added) VALUES ($1, $2, $3)',
+    [username, text, added]
   );
 };
 
