@@ -13,7 +13,7 @@ const SQL = `
 const main = async () => {
   console.log("loading....");
   const client = new Client({
-    connectionString: process.env.RAILWAY_DATABASE_CONNECTION_STRING,
+    connectionString: process.env.DATABASE_URL,
   });
   await client.connect();
   await client.query(SQL);
