@@ -11,7 +11,7 @@ const SQL = `
 `;
 
 const main = async () => {
-  console.log("loading...");
+  console.log("loading....");
   const client = new Client({
     connectionString: process.env.RAILWAY_DATABASE_CONNECTION_STRING,
   });
